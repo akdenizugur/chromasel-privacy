@@ -1,40 +1,1045 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#071429" />
+  <meta
+    name="description"
+    content="Privacy Policy for the Chromasel mobile application."
+  />
   <title>Chromasel Privacy Policy</title>
+
+  <style>
+    :root {
+      --bg: #050b18;
+      --bg-soft: #071429;
+      --panel: rgba(15, 28, 52, 0.78);
+      --panel-strong: rgba(18, 34, 63, 0.94);
+      --border: rgba(255, 255, 255, 0.10);
+      --border-strong: rgba(129, 179, 255, 0.22);
+      --text: #f5f8ff;
+      --muted: #aebad0;
+      --accent: #75b8ff;
+      --accent-2: #b68cff;
+      --accent-3: #68f0d2;
+      --danger: #ff8f9d;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(98, 157, 255, 0.20), transparent 34%),
+        radial-gradient(circle at 90% 10%, rgba(182, 140, 255, 0.18), transparent 32%),
+        radial-gradient(circle at 55% 100%, rgba(65, 233, 197, 0.10), transparent 36%),
+        linear-gradient(180deg, #071126 0%, #050b18 42%, #030711 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page-shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(117, 184, 255, 0.13), rgba(182, 140, 255, 0.10)),
+        rgba(7, 20, 41, 0.86);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -145px;
+      top: -145px;
+      border-radius: 50%;
+      background:
+        conic-gradient(
+          from 30deg,
+          rgba(117, 184, 255, 0.55),
+          rgba(104, 240, 210, 0.40),
+          rgba(182, 140, 255, 0.55),
+          rgba(117, 184, 255, 0.55)
+        );
+      filter: blur(2px);
+      opacity: 0.42;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-mark {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-weight: 900;
+      font-size: 30px;
+      letter-spacing: -2px;
+      color: white;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.85), transparent 18%),
+        conic-gradient(
+          from 210deg,
+          #78c8ff,
+          #6af0d0,
+          #ffe27d,
+          #ff8fb6,
+          #b68cff,
+          #78c8ff
+        );
+      box-shadow:
+        inset 0 0 0 2px rgba(255,255,255,0.36),
+        0 12px 36px rgba(103, 165, 255, 0.26);
+    }
+
+    .eyebrow {
+      margin: 0 0 2px;
+      color: var(--accent-3);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: 24px 0 0;
+      color: #d4def0;
+      font-size: 1.05rem;
+    }
+
+    .hero-meta {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #dce7fb;
+      background: rgba(255,255,255,0.055);
+      font-size: 0.88rem;
+      font-weight: 650;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 18px rgba(104, 240, 210, 0.7);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 26px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 18px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: rgba(8, 19, 37, 0.78);
+      box-shadow: 0 16px 45px rgba(0,0,0,0.20);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .toc-title {
+      margin: 0 0 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+    }
+
+    .toc nav {
+      display: grid;
+      gap: 4px;
+    }
+
+    .toc a {
+      padding: 9px 11px;
+      border-radius: 11px;
+      color: #c8d4e9;
+      font-size: 0.92rem;
+      transition: 0.2s ease;
+    }
+
+    .toc a:hover {
+      background: rgba(117, 184, 255, 0.10);
+      color: white;
+      text-decoration: none;
+      transform: translateX(2px);
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .summary-card {
+      min-height: 150px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)),
+        rgba(9, 22, 43, 0.72);
+    }
+
+    .summary-card .icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      color: #06101f;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .summary-card h2 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      letter-spacing: -0.015em;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.55;
+    }
+
+    .section-card {
+      margin-bottom: 16px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)),
+        rgba(8, 19, 37, 0.76);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.16);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      scroll-margin-top: 22px;
+    }
+
+    .section-head {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .section-number {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      color: white;
+      font-size: 0.88rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, rgba(117,184,255,0.9), rgba(182,140,255,0.95));
+      box-shadow: 0 9px 22px rgba(117,184,255,0.18);
+    }
+
+    h2.section-title {
+      margin: 2px 0 0;
+      font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    .section-card p {
+      margin: 10px 0;
+      color: #d1dbeb;
+    }
+
+    .section-card ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+      color: #d1dbeb;
+    }
+
+    .section-card li {
+      margin: 7px 0;
+      padding-left: 3px;
+    }
+
+    .callout {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--accent-3);
+      border-radius: 12px;
+      background: rgba(104, 240, 210, 0.07);
+      color: #dffcf5;
+    }
+
+    .contact-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 22px;
+      border: 1px solid rgba(117, 184, 255, 0.26);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, rgba(117, 184, 255, 0.10), rgba(182, 140, 255, 0.08)),
+        rgba(7, 18, 35, 0.86);
+    }
+
+    .contact-box h2 {
+      margin: 0 0 4px;
+      font-size: 1.25rem;
+    }
+
+    .contact-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 14px;
+      color: #06101f;
+      background: linear-gradient(135deg, var(--accent-3), var(--accent));
+      font-weight: 850;
+      box-shadow: 0 12px 28px rgba(103, 203, 232, 0.20);
+    }
+
+    .contact-button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    footer {
+      padding: 28px 6px 0;
+      text-align: center;
+      color: #8492a9;
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 920px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: relative;
+        top: auto;
+      }
+
+      .toc nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page-shell {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 10px;
+      }
+
+      .hero {
+        padding: 24px 20px;
+        border-radius: 22px;
+      }
+
+      .app-mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 17px;
+        font-size: 27px;
+      }
+
+      .toc nav {
+        grid-template-columns: 1fr;
+      }
+
+      .section-card {
+        padding: 21px 18px;
+        border-radius: 18px;
+      }
+
+      .section-head {
+        gap: 11px;
+      }
+
+      .contact-button {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: #111;
+      }
+
+      body::before,
+      .toc {
+        display: none;
+      }
+
+      .page-shell {
+        width: 100%;
+        padding: 0;
+      }
+
+      .hero,
+      .section-card,
+      .summary-card,
+      .contact-box {
+        background: white;
+        color: #111;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      .section-card p,
+      .section-card li,
+      .summary-card p,
+      .hero-copy,
+      .contact-box p {
+        color: #333;
+      }
+
+      a {
+        color: #111;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Privacy Policy for Chromasel</h1>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="brand-row">
+        <div class="app-mark" aria-hidden="true">C</div>
+        <div>
+          <p class="eyebrow">Chromasel</p>
+          <h1>Privacy Policy</h1>
+        </div>
+      </div>
 
-  <p>Last updated: 2026</p>
+      <p class="hero-copy">
+        This Privacy Policy explains how information is processed when you use
+        the Chromasel mobile application, including age screening, advertising,
+        privacy choices, images, device permissions, and locally stored data.
+      </p>
 
-  <p>Chromasel ("we", "our", or "us") operates the Chromasel mobile application.</p>
+      <div class="hero-meta">
+        <span class="pill"><span class="pill-dot"></span> Last updated: July 7, 2026</span>
+        <span class="pill">Mixed audience experience</span>
+        <span class="pill">Google AdMob &amp; UMP</span>
+      </div>
+    </header>
 
-  <h2>Information Collection and Use</h2>
-  <p>We do not directly collect personal information. However, the app may use third-party services that collect information used to identify you.</p>
+    <div class="layout">
+      <aside class="toc" aria-label="Privacy policy navigation">
+        <p class="toc-title">Contents</p>
+        <nav>
+          <a href="#information">1. Information You Provide</a>
+          <a href="#age-experience">2. Age-Appropriate Experience</a>
+          <a href="#advertising">3. Advertising and AdMob</a>
+          <a href="#consent">4. Consent and Privacy Choices</a>
+          <a href="#images">5. Images and Artwork</a>
+          <a href="#permissions">6. Device Permissions</a>
+          <a href="#technologies">7. Similar Technologies</a>
+          <a href="#children">8. Children’s Privacy</a>
+          <a href="#sharing">9. Data Sharing</a>
+          <a href="#retention">10. Data Retention</a>
+          <a href="#security">11. Data Security</a>
+          <a href="#choices">12. User Choices</a>
+          <a href="#international">13. International Processing</a>
+          <a href="#changes">14. Policy Changes</a>
+          <a href="#contact">15. Contact</a>
+        </nav>
+      </aside>
 
-  <h2>Third-Party Services</h2>
-  <p>The app uses the following third-party services:</p>
-  <ul>
-    <li>Google AdMob</li>
-  </ul>
+      <section class="content">
+        <div class="summary-grid" aria-label="Privacy highlights">
+          <article class="summary-card">
+            <div class="icon" aria-hidden="true">01</div>
+            <h2>Birth date stays on the device</h2>
+            <p>
+              The full date of birth is processed locally, is not stored by
+              Chromasel, and is not sent to our servers.
+            </p>
+          </article>
 
-  <p>AdMob may collect information such as device identifiers, usage data, and approximate location to provide advertisements.</p>
+          <article class="summary-card">
+            <div class="icon" aria-hidden="true">02</div>
+            <h2>Age-appropriate advertising</h2>
+            <p>
+              Advertising is not initialized until an age category is resolved,
+              and all age groups use a maximum “G” ad content rating.
+            </p>
+          </article>
 
-  <h2>Cookies</h2>
-  <p>Third-party services may use cookies or similar technologies to serve ads.</p>
+          <article class="summary-card">
+            <div class="icon" aria-hidden="true">03</div>
+            <h2>Artwork remains local</h2>
+            <p>
+              Selected images and completed artwork are processed locally and
+              are not uploaded to Chromasel servers.
+            </p>
+          </article>
+        </div>
 
-  <h2>Children’s Privacy</h2>
-  <p>Chromasel is designed for a general audience, including children. We do not knowingly collect personal data from children.</p>
+        <article class="section-card" id="information">
+          <div class="section-head">
+            <div class="section-number">1</div>
+            <h2 class="section-title">Information You Provide</h2>
+          </div>
 
-  <h2>Data Security</h2>
-  <p>We value your trust and strive to protect your data using acceptable means.</p>
+          <p>
+            Chromasel may ask users to enter their date of birth when the app is
+            first opened. This information is used only to determine an
+            appropriate age group and provide an age-appropriate advertising
+            experience.
+          </p>
 
-  <h2>Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time.</p>
+          <p>The full date of birth:</p>
+          <ul>
+            <li>Is processed locally on the user’s device</li>
+            <li>Is not stored by Chromasel</li>
+            <li>Is not transmitted to our servers</li>
+            <li>Is not shared with advertising providers</li>
+            <li>Is not included in analytics or application logs</li>
+          </ul>
 
-  <h2>Contact</h2>
-  <p>Email: ugur.akdeniz.12@gmail.com</p>
+          <p>
+            After the age group is calculated, only one of the following
+            categories is stored locally on the device:
+          </p>
+          <ul>
+            <li>CHILD</li>
+            <li>TEEN</li>
+            <li>ADULT</li>
+            <li>UNKNOWN</li>
+          </ul>
+
+          <p>
+            This age category is stored locally so that the app does not need to
+            request the date of birth every time it is opened. It may remain on
+            the device until the app is uninstalled, its storage is cleared, or
+            the application data is reset.
+          </p>
+        </article>
+
+        <article class="section-card" id="age-experience">
+          <div class="section-head">
+            <div class="section-number">2</div>
+            <h2 class="section-title">Age-Appropriate Experience</h2>
+          </div>
+
+          <p>
+            Chromasel is intended for a mixed audience that may include
+            children, teenagers, and adults.
+          </p>
+
+          <p>
+            The app uses a neutral age screen before initializing advertising
+            services. Advertising services are not initialized and
+            advertisements are not requested until the user’s age category has
+            been determined.
+          </p>
+
+          <p>
+            For children and users whose age cannot be determined, Chromasel
+            configures advertising requests as child-directed and applies
+            additional restrictions designed to prevent personalized or
+            interest-based advertising.
+          </p>
+
+          <p>
+            Teen users are also treated as being under the applicable age of
+            consent for advertising purposes.
+          </p>
+
+          <div class="callout">
+            All age groups are restricted to advertisements with a maximum
+            content rating of “G – General Audiences.”
+          </div>
+        </article>
+
+        <article class="section-card" id="advertising">
+          <div class="section-head">
+            <div class="section-number">3</div>
+            <h2 class="section-title">Advertising and Google AdMob</h2>
+          </div>
+
+          <p>
+            Chromasel uses Google AdMob to display advertisements, including
+            banner, interstitial, and rewarded advertisements.
+          </p>
+
+          <p>
+            Depending on the user’s age category, consent choices, device
+            settings, location, and applicable law, Google AdMob may process
+            information such as:
+          </p>
+
+          <ul>
+            <li>IP address and approximate location derived from the IP address</li>
+            <li>Device or application identifiers</li>
+            <li>Advertising identifiers, where permitted</li>
+            <li>Application interactions, including app launches, taps, and ad views</li>
+            <li>Diagnostic and performance information</li>
+            <li>Information used for advertising, analytics, security, and fraud prevention</li>
+          </ul>
+
+          <p>
+            Chromasel configures Google AdMob to limit personalized advertising
+            and identifier use for children and users of unknown age.
+          </p>
+
+          <p>
+            Advertisements shown to children and users of unknown age are
+            configured to use child-appropriate advertising settings and a
+            “G – General Audiences” content rating.
+          </p>
+
+          <p>
+            Google processes information according to its own privacy policies,
+            advertising policies, and terms.
+          </p>
+        </article>
+
+        <article class="section-card" id="consent">
+          <div class="section-head">
+            <div class="section-number">4</div>
+            <h2 class="section-title">Advertising Consent and Privacy Choices</h2>
+          </div>
+
+          <p>
+            Chromasel uses Google’s User Messaging Platform (“UMP”) to manage
+            advertising privacy choices where required.
+          </p>
+
+          <p>
+            Adult users in certain countries or regions may be shown a consent
+            message before advertising services are initialized. This message
+            may allow users to:
+          </p>
+
+          <ul>
+            <li>Consent to personalized advertising</li>
+            <li>Refuse consent</li>
+            <li>Manage advertising and data-processing options</li>
+            <li>Review the advertising technology providers involved</li>
+          </ul>
+
+          <p>
+            Where required, users may later reopen the privacy form through the
+            “Ad Privacy Preferences” or “Reklam Gizlilik Tercihleri” option in
+            the application settings.
+          </p>
+
+          <p>
+            If consent is required and permission to request advertisements has
+            not been provided, Chromasel does not initialize the advertising
+            service or request advertisements.
+          </p>
+
+          <p>
+            Children, teenagers, and users of unknown age are not shown an adult
+            advertising consent flow. They are instead placed into the
+            restricted, age-appropriate advertising configuration.
+          </p>
+        </article>
+
+        <article class="section-card" id="images">
+          <div class="section-head">
+            <div class="section-number">5</div>
+            <h2 class="section-title">Images and Artwork</h2>
+          </div>
+
+          <p>
+            Chromasel allows users to select images from their device and save
+            completed artwork to their device.
+          </p>
+
+          <p>
+            Images selected by the user and artwork created in Chromasel are
+            processed locally on the device.
+          </p>
+
+          <p>
+            Chromasel does not upload selected images or completed artwork to
+            our servers.
+          </p>
+
+          <p>
+            When a user chooses to save an image, the app may request permission
+            to add the completed artwork to the device’s photo or media library.
+          </p>
+
+          <p>
+            If the user chooses to share an image using another application or
+            service, the handling of that image is governed by the privacy
+            policy of the selected third-party application or service.
+          </p>
+        </article>
+
+        <article class="section-card" id="permissions">
+          <div class="section-head">
+            <div class="section-number">6</div>
+            <h2 class="section-title">Device Permissions</h2>
+          </div>
+
+          <p>
+            Chromasel may request limited device permissions that are necessary
+            for features such as:
+          </p>
+
+          <ul>
+            <li>Selecting an image</li>
+            <li>Saving completed artwork</li>
+            <li>Displaying advertisements</li>
+            <li>Accessing network connectivity</li>
+          </ul>
+
+          <p>
+            Chromasel does not require continuous access to the user’s entire
+            photo or video library. Media access is intended only for
+            user-initiated image selection and saving operations.
+          </p>
+
+          <p>
+            Users can review or revoke application permissions through their
+            device settings. Revoking a permission may prevent the related
+            feature from functioning.
+          </p>
+        </article>
+
+        <article class="section-card" id="technologies">
+          <div class="section-head">
+            <div class="section-number">7</div>
+            <h2 class="section-title">Cookies and Similar Technologies</h2>
+          </div>
+
+          <p>
+            Chromasel itself does not operate website cookies inside the
+            application.
+          </p>
+
+          <p>
+            Third-party advertising and consent services may use device storage,
+            identifiers, SDK storage, or similar technologies to:
+          </p>
+
+          <ul>
+            <li>Store consent choices</li>
+            <li>Deliver and measure advertisements</li>
+            <li>Prevent fraud and abuse</li>
+            <li>Maintain advertising and privacy preferences</li>
+          </ul>
+
+          <p>
+            The availability and use of these technologies may depend on the
+            user’s age category, consent choices, device settings, and
+            applicable law.
+          </p>
+        </article>
+
+        <article class="section-card" id="children">
+          <div class="section-head">
+            <div class="section-number">8</div>
+            <h2 class="section-title">Children’s Privacy</h2>
+          </div>
+
+          <p>
+            Chromasel does not intentionally request names, email addresses,
+            phone numbers, precise location information, or account credentials
+            from children through the age-screening process.
+          </p>
+
+          <p>
+            The full date of birth entered on the neutral age screen is not
+            retained or transmitted.
+          </p>
+
+          <p>For users identified as children or whose age is unknown:</p>
+
+          <ul>
+            <li>Personalized and interest-based advertising is restricted</li>
+            <li>Child-directed advertising settings are applied</li>
+            <li>The maximum advertisement content rating is set to G</li>
+            <li>Advertising services are not initialized before the age category is determined</li>
+            <li>Advertising identifiers are restricted in accordance with the applied SDK settings</li>
+          </ul>
+
+          <p>
+            Parents or legal guardians who believe that a child has provided
+            personal information through Chromasel may contact us using the
+            email address below.
+          </p>
+        </article>
+
+        <article class="section-card" id="sharing">
+          <div class="section-head">
+            <div class="section-number">9</div>
+            <h2 class="section-title">Data Sharing</h2>
+          </div>
+
+          <p>
+            Chromasel does not operate a system that directly sells
+            user-submitted personal information.
+          </p>
+
+          <p>
+            Information may be processed by Google AdMob and Google UMP as
+            necessary to provide advertisements, manage privacy choices,
+            perform analytics, maintain security, and prevent fraud.
+          </p>
+
+          <p>
+            Third-party providers process information under their own privacy
+            policies and legal obligations.
+          </p>
+        </article>
+
+        <article class="section-card" id="retention">
+          <div class="section-head">
+            <div class="section-number">10</div>
+            <h2 class="section-title">Data Retention</h2>
+          </div>
+
+          <p>
+            The derived age category is stored locally on the user’s device and
+            may remain until:
+          </p>
+
+          <ul>
+            <li>The application is uninstalled</li>
+            <li>The application’s storage is cleared</li>
+            <li>The age-category data is reset during development or troubleshooting</li>
+          </ul>
+
+          <p>
+            Advertising consent choices may be retained by Google UMP or related
+            Google services according to their own retention practices.
+          </p>
+
+          <p>
+            Chromasel does not retain the user’s complete date of birth on its
+            servers.
+          </p>
+        </article>
+
+        <article class="section-card" id="security">
+          <div class="section-head">
+            <div class="section-number">11</div>
+            <h2 class="section-title">Data Security</h2>
+          </div>
+
+          <p>
+            We use reasonable technical and organizational measures to protect
+            information processed by Chromasel.
+          </p>
+
+          <p>
+            However, no electronic storage or transmission method can be
+            guaranteed to be completely secure. Users should also protect their
+            devices and keep their operating systems and applications updated.
+          </p>
+        </article>
+
+        <article class="section-card" id="choices">
+          <div class="section-head">
+            <div class="section-number">12</div>
+            <h2 class="section-title">User Choices</h2>
+          </div>
+
+          <p>Users may:</p>
+          <ul>
+            <li>Decline or manage advertising consent where the option is available</li>
+            <li>Reopen advertising privacy preferences through the application settings</li>
+            <li>Disable or reset the device advertising identifier through Android settings</li>
+            <li>Revoke application permissions through device settings</li>
+            <li>Clear locally stored application data</li>
+            <li>Uninstall Chromasel</li>
+          </ul>
+
+          <p>
+            Some application or advertising features may become unavailable
+            after certain permissions or consent choices are changed.
+          </p>
+        </article>
+
+        <article class="section-card" id="international">
+          <div class="section-head">
+            <div class="section-number">13</div>
+            <h2 class="section-title">International Data Processing</h2>
+          </div>
+
+          <p>
+            Google and other service providers may process information in
+            countries other than the user’s country of residence.
+          </p>
+
+          <p>
+            Where applicable, these providers are responsible for using
+            appropriate legal safeguards for international data processing
+            under their respective privacy policies.
+          </p>
+        </article>
+
+        <article class="section-card" id="changes">
+          <div class="section-head">
+            <div class="section-number">14</div>
+            <h2 class="section-title">Changes to This Privacy Policy</h2>
+          </div>
+
+          <p>
+            We may update this Privacy Policy when the application, advertising
+            configuration, legal requirements, or third-party services change.
+          </p>
+
+          <p>
+            Updates will be published on this page together with a revised
+            “Last updated” date.
+          </p>
+
+          <p>
+            Users are encouraged to review this Privacy Policy periodically.
+          </p>
+        </article>
+
+        <section class="contact-box" id="contact">
+          <div>
+            <h2>15. Contact</h2>
+            <p>
+              For questions, privacy requests, or concerns regarding this
+              Privacy Policy, contact us by email.
+            </p>
+          </div>
+
+          <a class="contact-button" href="mailto:ugur.akdeniz.12@gmail.com">
+            ugur.akdeniz.12@gmail.com
+          </a>
+        </section>
+
+        <footer>
+          © 2026 Chromasel. Privacy Policy.
+        </footer>
+      </section>
+    </div>
+  </main>
 </body>
 </html>
